@@ -1,22 +1,42 @@
-```html
-<!DOCTYPE html>
-<html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sky Animation</title>
+```javascript
+// script.js
 
-    <!-- เชื่อมต่อไฟล์ CSS -->
-    <link rel="stylesheet" href="sky.css">
-</head>
-<body>
+document.addEventListener("DOMContentLoaded", () => {
+    const sky = document.querySelector(".sky");
 
-    <div class="sky">
-        <div class="cloud cloud1"></div>
-        <div class="cloud cloud2"></div>
-    </div>
+    function createCloud() {
+        const cloud = document.createElement("div");
 
-</body>
-</html>
+        cloud.classList.add("cloud");
+
+        const size = Math.random() * 120 + 100;
+        const topPos = Math.random() * 300;
+
+        cloud.style.width = `${size}px`;
+        cloud.style.height = `${size * 0.35}px`;
+        cloud.style.top = `${topPos}px`;
+        cloud.style.left = "-250px";
+
+        const duration = Math.random() * 20 + 20;
+
+        cloud.animate(
+            [
+                { transform: "translateX(0)" },
+                { transform: `translateX(${window.innerWidth + 400}px)` }
+            ],
+            {
+                duration: duration * 1000,
+                iterations: Infinity,
+                easing: "linear"
+            }
+        );
+
+        sky.appendChild(cloud);
+    }
+
+    // สร้างเมฆเริ่มต้น
+    for (let i = 0; i < 5; i++) {
+        createCloud();
+    }
+});
 ```
-
