@@ -1,1 +1,22 @@
+```html
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sky Animation</title>
+
+    <!-- เชื่อมต่อไฟล์ CSS -->
+    <link rel="stylesheet" href="sky.css">
+</head>
+<body>
+
+    <div class="sky">
+        <div class="cloud cloud1"></div>
+        <div class="cloud cloud2"></div>
+    </div>
+
+</body>
+</html>
+```
 
