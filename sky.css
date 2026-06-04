@@ -1,0 +1,72 @@
+/* sky.css */
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.sky {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(
+        to bottom,
+        #4facfe 0%,
+        #00c6ff 100%
+    );
+    position: relative;
+}
+
+/* เมฆ */
+.cloud {
+    position: absolute;
+    background: white;
+    border-radius: 50px;
+    opacity: 0.9;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 60px;
+    height: 60px;
+    top: -30px;
+    left: 10px;
+}
+
+.cloud::after {
+    width: 80px;
+    height: 80px;
+    top: -40px;
+    right: 10px;
+}
+
+.cloud1 {
+    width: 180px;
+    height: 60px;
+    top: 80px;
+    left: -200px;
+    animation: moveCloud 25s linear infinite;
+}
+
+.cloud2 {
+    width: 220px;
+    height: 70px;
+    top: 180px;
+    left: -250px;
+    animation: moveCloud 35s linear infinite;
+}
+
+@keyframes moveCloud {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(100vw + 400px));
+    }
+}
