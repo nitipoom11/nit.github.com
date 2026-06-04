@@ -1,42 +1,62 @@
-```javascript
-// script.js
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="เว็บไซต์แสดงผลงานและทักษะของ Somchai">
+    <title>ความภาคภูมิใจของ SOMCHAI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-document.addEventListener("DOMContentLoaded", () => {
-    const sky = document.querySelector(".sky");
+    <!-- ส่วนหัวของเว็บ -->
+    <header>
+        <h1>สวัสดี! ผมคือ SOMCHAI</h1>
+        <p>นี่คือผลงานและความภาคภูมิใจของผม</p>
+    </header>
 
-    function createCloud() {
-        const cloud = document.createElement("div");
+    <!-- ส่วนเกี่ยวกับตัวเอง -->
+    <section id="about">
+        <h2>เกี่ยวกับผม</h2>
+        <p>ผมเป็นนักพัฒนาซอฟต์แวร์ที่มีความหลงใหลในการสร้างสรรค์สิ่งใหม่ ๆ ผมภูมิใจในผลงานและทักษะที่ผมพัฒนามาอย่างต่อเนื่อง</p>
+    </section>
 
-        cloud.classList.add("cloud");
+    <!-- ส่วนแสดงผลงาน -->
+    <section id="projects">
+        <h2>ผลงานของผม</h2>
 
-        const size = Math.random() * 120 + 100;
-        const topPos = Math.random() * 300;
+        <div class="project">
+            <h3>เว็บไซต์ Portfolio</h3>
+            <p>เว็บไซต์นี้เป็นหนึ่งในผลงานที่ผมสร้างขึ้นเพื่อแสดงความสามารถของผม</p>
+        </div>
 
-        cloud.style.width = `${size}px`;
-        cloud.style.height = `${size * 0.35}px`;
-        cloud.style.top = `${topPos}px`;
-        cloud.style.left = "-250px";
+        <div class="project">
+            <h3>แอปพลิเคชันจัดการงาน</h3>
+            <p>แอปพลิเคชันที่ช่วยให้ผู้ใช้งานจัดการงานได้อย่างมีประสิทธิภาพ</p>
+        </div>
+    </section>
 
-        const duration = Math.random() * 20 + 20;
+    <!-- ส่วนแสดงทักษะ -->
+    <section id="skills">
+        <h2>ทักษะของผม</h2>
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>Python, Django</li>
+            <li>Git และ GitHub</li>
+            <li>การออกแบบ UI/UX</li>
+        </ul>
+    </section>
 
-        cloud.animate(
-            [
-                { transform: "translateX(0)" },
-                { transform: `translateX(${window.innerWidth + 400}px)` }
-            ],
-            {
-                duration: duration * 1000,
-                iterations: Infinity,
-                easing: "linear"
-            }
-        );
+    <!-- ส่วนติดต่อและลิขสิทธิ์ -->
+    <footer>
+        <p>ติดต่อผมได้ที่:
+            <a href="mailto:somchai@example.com">somchai@example.com</a>
+        </p>
+        <p>&copy; <span id="year"></span> SOMCHAI. All rights reserved.</p>
+    </footer>
 
-        sky.appendChild(cloud);
-    }
+    <!-- ลิงก์ไปยัง JavaScript -->
+    <script src="script.js"></script>
 
-    // สร้างเมฆเริ่มต้น
-    for (let i = 0; i < 5; i++) {
-        createCloud();
-    }
-});
-```
+</body>
+</html>
